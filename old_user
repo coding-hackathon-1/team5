@@ -1,0 +1,16 @@
+def old_user():
+    user_name = input("Enter your user name: ")
+    pass_word = ps.getpass("Password: ")
+    #if u_name == user_data['username']: #and pswd == user_data['password']:
+    
+    while True:
+        if str(user_name) in str(user_data['user_name']) and str(pass_word) in str(user_data['password']):
+            print(f"Login successful, Welcome back {user_name}!")
+            break
+    
+        else:
+            print("Invalid login, please try again.")
+            return old_user()
+        
+    #else:
+        #print("User doesn't exist or wrong password!")
