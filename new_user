@@ -9,8 +9,6 @@ def new_user():
     pass_word = ps.getpass("Password: ")
     
     #---------------------------------------------------------------------------
-
-    
                 
     nation = input("What is your nationality? ")
     
