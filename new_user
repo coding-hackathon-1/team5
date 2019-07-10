@@ -1,0 +1,78 @@
+def new_user(): 
+   
+    email = input("Please enter your @student.hult.edu email: ")
+
+
+    #---------------------------------------------------------------------------
+    
+    user_name = input("Enter your user name: ")
+    pass_word = ps.getpass("Password: ")
+    
+    #---------------------------------------------------------------------------
+
+    
+                
+    nation = input("What is your nationality? ")
+    
+    #---------------------------------------------------------------------------
+    
+    while True:
+        
+        lang_no = int(input("How many languages do you speak? (Max 5) "))
+    
+        if lang_no == 1:
+            lang_1 = input("What language do you speak? ")
+            lang_2 = ""
+            lang_3 = ""
+            lang_4 = ""
+            lang_5 = ""
+            break
+        
+        elif lang_no == 2:
+            lang_1 = input("What language do you speak? ")
+            lang_2 = input("What is the second language you speak? ")
+            lang_3 = ""
+            lang_4 = ""
+            lang_5 = ""
+            break
+        
+        elif lang_no == 3:
+            lang_1 = input("What language do you speak? ")
+            lang_2 = input("What is the second language you speak? ")
+            lang_3 = input("What is the third language you speak? ")
+            lang_4 = ""
+            lang_5 = ""
+            break
+        
+        elif lang_no == 4:
+            lang_1 = input("What language do you speak? ")
+            lang_2 = input("What is the second language you speak? ")
+            lang_3 = input("What is the third language you speak? ")
+            lang_4 = input("What is the fourth language you speak? ")
+            lang_5 = ""
+            break
+        
+        else:
+            lang_1 = input("What language do you speak? ")
+            lang_2 = input("What is the second language you speak? ")
+            lang_3 = input("What is the third language you speak? ")
+            lang_4 = input("What is the fourth language you speak? ")
+            lang_5 = input("What is the fifth language you speak? ")
+            break
+            
+    #---------------------------------------------------------------------------
+    
+    
+    app_list.append({"user_name" : user_name,
+                     "password" : pass_word,
+                     "email" : email,
+                     "nation" : nation,
+                     "lang_no" : lang_no,
+                     "lang_1" : lang_1,
+                     "lang_2" : lang_2,
+                     "lang_3" : lang_3,
+                     "lang_4" : lang_4,
+                     "lang_5" : lang_5})
+    
+
+    print("Account Created")
