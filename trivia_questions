@@ -1,0 +1,60 @@
+#Trivia Questions
+
+count = 0
+cohort = input("""
+Hello! We are so excited that you are in Hult!
+We are very proud of our student body and how diverse it is!
+We want you to expand your knowledge about the world.
+Here are some trivia questions for you in exchange of XP's for you and your cohort!
+       
+What is your Cohort? >> """)
+if cohort.lower is 'blue' or 'green' or 'yellow' or 'red':
+    print(f"""\n Great, welcome member of the {cohort} team""")
+else: 
+    print("This is not a cohort. Please write it again")      
+    
+continent = input( """ \n
+    Which of this is not a continent? 
+              a. North America
+              b. Southern Africa
+              c. Oceania
+              d. Asia \n \n 
+              Answer >>  """)
+    
+                     
+if continent == 'b' or 'B':
+    print("\n Amazing!")
+    count += 5
+else:
+    print("\n adooo!!!")
+    
+
+antartica = input( """ \n Is Antartica a country?
+      Hmm, I remember I saw a picture of their capital "Iglü"
+              a. no
+              b. yes
+              """)
+
+if antartica == 'a' or 'A':
+    print("Great!")
+    count += 5
+else:
+    print("adooo!")
+    
+print(f"""\n Jakarta is obviously in Asia, just as Juba, right?""")
+capital = input( """ \n
+      Is Juba in Asia?
+              a. duh
+              b. wtf, no
+              """)
+if capital == 'b' or "B":
+    print("\n Great!")
+    count += 5
+    print(f"Current Score is {count}!!")
+else:
+    print("\n adooo!")    
+    
+             
+
+        
+      
