@@ -1,0 +1,23 @@
+while True:
+    user = input("""  
+    If you are an existing user, input 'Log In'
+
+    If you are a new user, input 'Register'  
+
+    """)
+
+    if user.lower() == "register" :
+        new_user()
+        user_data = df.append(app_list, ignore_index = True)
+        user_data = user_data.reindex(columns = ['user_name', 'password', 'email', 'nation', 'lang_no', 'lang_1', "lang_2", "lang_3", "lang_4", "lang_5"])
+        user_data.to_excel('user_data.xlsx')
+        break
+
+
+    elif user.lower() == "log in":
+        old_user()
+        break
+
+
+    else:
+        print("Wrong input! Please enter 'Log In' or 'Register'")
