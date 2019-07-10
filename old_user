@@ -11,6 +11,3 @@ def old_user():
         else:
             print("Invalid login, please try again.")
             return old_user()
-        
-    #else:
-        #print("User doesn't exist or wrong password!")
