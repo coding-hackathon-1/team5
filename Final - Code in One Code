@@ -1,0 +1,288 @@
+import random as rd
+import pandas as pd
+import getpass as ps
+import random
+
+
+app_list = []
+df = pd.DataFrame()
+
+
+#Making sure it is hults email. 
+def edu_email():
+    email = input("Please enter your @student.hult.edu email: ")
+    if '@student.hult.edu' in email: 
+        return email
+    else:
+        return edu_email()
+    
+#Registering a new user
+def new_user(): 
+   
+    email = str(edu_email())    
+    user_name = input("Enter your user name: ")
+    pass_word = ps.getpass("Password: ")              
+    nation = input("What is your nationality? ")
+    
+    #input languages spoken
+    while True:      
+        lang_no = int(input("How many languages do you speak? (Max 5) "))
+        
+        if lang_no == 1:
+            lang_1 = input("What language do you speak? ")
+            lang_2 = ""
+            lang_3 = ""
+            lang_4 = ""
+            lang_5 = ""
+            break
+        
+        elif lang_no == 2:
+            lang_1 = input("What language do you speak? ")
+            lang_2 = input("What is the second language you speak? ")
+            lang_3 = ""
+            lang_4 = ""
+            lang_5 = ""
+            break
+        
+        elif lang_no == 3:
+            lang_1 = input("What language do you speak? ")
+            lang_2 = input("What is the second language you speak? ")
+            lang_3 = input("What is the third language you speak? ")
+            lang_4 = ""
+            lang_5 = ""
+            break
+        
+        elif lang_no == 4:
+            lang_1 = input("What language do you speak? ")
+            lang_2 = input("What is the second language you speak? ")
+            lang_3 = input("What is the third language you speak? ")
+            lang_4 = input("What is the fourth language you speak? ")
+            lang_5 = ""
+            break
+        
+        else:
+            lang_1 = input("What language do you speak? ")
+            lang_2 = input("What is the second language you speak? ")
+            lang_3 = input("What is the third language you speak? ")
+            lang_4 = input("What is the fourth language you speak? ")
+            lang_5 = input("What is the fifth language you speak? ")
+            break
+            
+    
+    print("Account Created")
+    
+    #------------------------------------------------------------------------------------------
+    #Randomize the new account into the 4 cohorts
+    types = ("Golden Gate Bridge", "Lombard Street", "Coit Tower", "Alcatraz Island")
+    cohort = random.sample(types,1)
+    co = ''.join(cohort)
+    print(f"You are in the {co} cohort!")
+    
+    personal_xp = 0
+    
+    
+    app_list.append({"user_name" : user_name,
+                     "password" : pass_word,
+                     "email" : email,
+                     "nation" : nation,
+                     "lang_no" : lang_no,
+                     "lang_1" : lang_1,
+                     "lang_2" : lang_2,
+                     "lang_3" : lang_3,
+                     "lang_4" : lang_4,
+                     "lang_5" : lang_5,
+                     "cohort" : co,
+                     "personal_xp" : personal_xp})
+    
+
+#Cohort points DataFrame to csv file
+data = {'cohort':['Golden Gate Bridge', 'Lombard Street', 'Coit Tower', 'Alcatraz Island'], 'cohort_xp':[0,0,0,0]}
+cohort_data = pd.DataFrame(data)
+cohort_data.to_csv('cohort_data.csv')
+
+
+
+#login existing user
+def old_user():
+    user_name = input("Enter your user name: ")
+    pass_word = ps.getpass("Password: ")
+    
+    while True:
+        if str(user_name) in str(user_data['user_name']) and str(pass_word) in str(user_data['password']):
+            print(f"Login successful, Welcome back {user_name}!")
+            break
+    
+        else:
+            print("Invalid login, please try again.")
+            return old_user()
+        
+        
+#defining if user is new or old
+while True:
+    user = input("""  
+If you are an existing user, input 'Log In'
+If you are a new user, input 'Register'  
+>> """)
+
+    if user.lower() == "register" :
+        new_user()
+        user_data = df.append(app_list, ignore_index = True)
+        user_data = user_data.reindex(columns = ['user_name', 'password', 'email', 'nation', 'lang_no', 'lang_1', "lang_2", "lang_3", "lang_4", "lang_5", "cohort","personal_xp"])
+        user_data.to_csv('user_data.csv')
+        break
+
+    elif user.lower() == "log in":
+        old_user()
+        break
+
+    else:
+        print("Wrong input! Please enter 'Log In' or 'Register'")
+        
+     
+#Trivia Questions and personal_xp generation for the user.
+
+user_name = str(input("Please enter your username: "))
+user_data1 = user_data.set_index('user_name')
+cohort = str(user_data1.loc[user_name, "cohort"])
+personal_xp = int(user_data1.loc[user_name, "personal_xp"])
+trivia_xp = 0
+
+input("Enter trivia to do trivia!")
+print(f"""
+________________________________________________________________________________________________________
+
+Welcome {user_name}, from the {cohort} cohort!
+
+Are you ready for this Geography Quiz? 
+This quiz will allow you to gain up to 30 personal XP. 
+The points you gain will also be added to your cohort's XP.
+You currently have {personal_xp} points. 
+
+Remember, for wrong questions, you do not get any points nor re-dos!""")
+
+input(f"\n\nPress Enter to start!")
+
+  
+#-------------------------------------------------------------------------------------------------------
+quest_1 = input("""\n
+*Question 1*
+Which of this is not a continent? 
+    a. North America
+    b. South Africa
+    c. Oceania
+    d. Asia 
+
+Answer >>  """)
+
+quest_1 = quest_1.lower()                    
+if quest_1 == 'b':
+    print("Amazing!")
+    personal_xp += 5
+    trivia_xp += 5
+else:
+    print("All of them are continents except South Africa, which is a country.")
+    
+    
+quest_2 = input("""\n 
+*Question 2*
+Is Antartica a country? I remember I saw a picture of their capital "Iglü".
+    a. Yes
+    b. No
+       
+Answer >> """)
+
+quest_2 = quest_2.lower()
+if quest_2 == 'b':
+    print("Great!")
+    personal_xp += 5
+    trivia_xp += 5
+else:
+    print("Where did you see that? Antartica is a continent, not a country!")
+
+    
+quest_3 = input("""\n
+*Question 3* 
+Jakarta is in Asia, just like Juba, right? Is Juba in Asia?
+    a. Duh!
+    b. Of course not!
+       
+Answer >> """)
+
+quest_3 = quest_3.lower()            
+if quest_3 == 'b':
+    print("You are right!")
+    personal_xp += 5
+    trivia_xp += 5
+else:
+    print("It is not! Juba is the capital of South Sudan, Africa!") 
+
+
+quest_4 = input("""\n 
+*Question 4*
+Which is the only country to play in every World Cup?
+    a. Germany
+    b. Current Champs, France
+    c. Brasil
+    d. Netherlands
+                
+Answer >> """)
+
+quest_4 = quest_4.lower()
+if quest_4 == 'c':
+    print("That's correct!")
+    personal_xp += 5
+    trivia_xp += 5
+else:
+    print("Brasil has never missed a World Cup and have been champions 5 times!")
+ 
+ 
+quest_5 = input("""\n 
+*Question 5*
+What is the capital city of Singapore?
+    a. Tampines
+    b. Jakarta
+    c. Kuala Lumpur
+    d. Singapore 
+        
+Answer >> """)
+
+quest_5 = quest_5.lower()
+if quest_5 == 'd':
+    print("Amazing!")
+    personal_xp += 5
+    trivia_xp += 5
+else:
+    print("Wrong! Singapore is the capital city of Singapore!")
+    
+
+quest_6 = input("""\n 
+*Question 6*
+Where is Papua New Guinea?
+    a. West Africa
+    b. South America
+    c. Oceania
+    d. Asia 
+       
+Answer >> """)
+                      
+quest_6 = quest_6.lower()
+if quest_6 == 'c':
+    print("Good job!")
+    personal_xp += 5
+    trivia_xp += 5
+else:
+    print("Wrong! It is in Oceania, Papua New Guinea is on top of Australia, beside Indonesia!")  
+
+#add personal_xp to the username 
+user_data.loc[user_data['user_name'] == user_name, ['personal_xp']] += personal_xp
+cohort_data.loc[cohort_data['cohort'] == cohort, ['cohort_xp']] += personal_xp
+
+#edit the csv files
+user_data.to_csv('user_data.csv')
+cohort_data.to_csv('cohort_data.csv')
+
+#Here we want to display the XP's that the person generated.
+print(f"\n\nYou earned {trivia_xp} points from that round! Your total is now {personal_xp}!")
+
+
+
