@@ -143,7 +143,19 @@ Github
 - Created a master code
 - Updated repository
 
+#### Afternoon session:
+
+Python coding
+- Tested code to recheck if everything worked smoothly
+
+Google slides
+- Created wire frames to put on presentation
+- Finished presentation
+
+Github
+- Uploaded documents
+- Created folders to organize files
+- Updated repository
 
 
-
-#### Last updated by Raafi at 10:11 am
+#### Last updated by Raafi at 1:12 pm
