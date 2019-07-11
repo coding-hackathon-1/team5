@@ -20,7 +20,7 @@ Brainstorming Session
 Draft idea
 - We came up with an idea of a personal finances application that asks a user's monthly income and recommends a set percentage to set aside for rent, food, travel, and miscellaneous expensiture. We also thought about recommending places to live and get food depending on their budget. It would solve the issue of housing by integrating the main filter of budget.
 
-#### Evening session:
+#### Afternoon session:
 
 Personal reflection
 - Upon reflecting from in-class feedback - we decided to go against our personal finances application because it does not solve a need to the extent which we were expecting. It was not the main problem that many of our colleages mentioned.
@@ -44,6 +44,21 @@ Final idea
 - Our final idea is a mobile application that incoming students can sign into to create an account of their personal information, nationality and languages spoken. The application will randomize a cohort and assign it to the user. The application will allow users to answer trivia questions to increase personal experience points that adds into the cumulative cohort experience points. 
 - The objective is to remove pre-set clusters and allow students to meet people from different nationalities coming to Hult. It will encouage team work by incentivizing students to do activities for points that can be redeemed for prizes. This aligns with Hult's values of trying to promote a diverse environment in which studencts can learn about the world while being under the same roof.
 
+#### Evening session:
+
+Python coding
+- Kept coding the main dashboard of the app
+
+SQLite
+- Downloaded and started to learn SQLite
+
+Secondary research
+- Researched problems for incoming students in general
+- Reserached the pros and cons of cohorts and how it works successfully in other universities
+
+User journey
+- Mapped out the first stages of user journey to see how the application will flow
+
 _________________________________________________________
 
 ### Wednesday, July 10, 2019
@@ -65,7 +80,7 @@ SQLite
 - Two members of the team downloaded SQLite and started learning how to use it 
   - We decided to go with this software because it was free and supposedly the easiest to learn
 
-#### Evening session:
+#### Afternoon session:
 
 Python coding
 - Finishing up trivia questions and creating a points system with each user
@@ -90,4 +105,45 @@ Candle passing
 - We talked about our progress and if we are happy with what we have.
 - We still have some things to figure out including wire frame, presentation deck, and SQLite
 
+#### Evening session:
+
+Python coding
+- Finished up coding personal_xp and cohort_xp to make it run smoothly and update on respective data frames. 
+
+ERD
+- Finished Phase 1 ERD on Lucidcharts
+
+Google slides
+- Updated the slides 80% in to finish up in school
+
+SQLite
+- Figued our how to update databases on SQLlite to do further data analysis
+
+Team bonding
+- Conversed with Ayelet where she told us to work hard, but also take a break and have fun
+- We ordered food and watched 30 minutes of a movie
+
 _________________________________________________________
+
+### Thursday, July 11, 2019
+
+#### Morning session:
+
+Python coding
+- Updated python code to make sure everything runs fine
+- All data frames working working and updating fine
+- Finished final python code and saved as ipynp
+
+Google slides
+- Updating presentation
+- Practicing our speeches
+
+Github
+- Uploaded documents
+- Created a master code
+- Updated repository
+
+
+
+
+#### Last updated by Raafi at 10:11 am
