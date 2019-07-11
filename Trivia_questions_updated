@@ -12,48 +12,62 @@ if cohort.lower is 'blue' or 'green' or 'yellow' or 'red':
     print(f"""\n Great, welcome member of the {cohort} team""")
 else: 
     print("This is not a cohort. Please write it again")      
-    
+  
+#-------------------------------------------------------------------------------------------------------
 quest_1 = input( """ \n
-    Which of this is not a continent? 
-              a. North America
-              b. Southern Africa
-              c. Oceania
-              d. Asia \n \n 
-              Answer >>  """)
+Which of this is not a continent? 
+       a. North America
+       b. Southern Africa
+       c. Oceania
+       d. Asia \n \n 
+       Answer >>  """)
     
                      
 if quest_1 == 'b' or 'B':
     print("\n Amazing!")
     count += 5
 else:
-    print("\n adooo!!!")
-    
+    print("\n It is b! Southern Africa is a country not a continent.\n")
+#-------------------------------------------------------------------------------------------------------
+input("Press enter for next question")
 
-quest_2 = input( """ \n Is Antartica a country?
-      Hmm, I remember I saw a picture of their capital "Iglü"
-              a. no
-              b. yes
-              """)
+#-------------------------------------------------------------------------------------------------------
+quest_2 = input( """ \n 
+Is Antartica a country?
+Hmm, I remember I saw a picture of their capital "Iglü"
+       a. yes
+       b. no
+       """)
 
-if quest_2 == 'a' or 'A':
+if quest_2 == 'b' or 'B':
     print("Great!")
     count += 5
 else:
-    print("adooo!")
+    print("Where did you see that? Antartica is a continent, not a country!")
     
-print(f"""\n Jakarta is obviously in Asia, just as Juba, right?""")
+#-------------------------------------------------------------------------------------------------------   
+input("Press enter for next question")   
+    
+#-------------------------------------------------------------------------------------------------------
 quest_3 = input( """ \n
-      Is Juba in Asia?
-              a. duh
-              b. wtf, no
-              """)
+Jakarta is obviously in Asia, just as Juba, right?
+Is Juba in Asia?
+       a. duh
+       b. wtf, no
+       """)
+              
 if quest_3 == 'b' or "B":
     print("\n Great!")
     count += 5
     print(f"Current Score is {count}!!")
 else:
-    print("\n adooo!") 
+    print("\n Juba is the capital of South Sudan in Africa!") 
+
+
+#-------------------------------------------------------------------------------------------------------   
+input("Press enter for next question")   
     
+#-------------------------------------------------------------------------------------------------------
 quest_4 = input( """ \n Which is the only country to play in every World Cup?
                               a. Germany
                               b. Current Champs, France
@@ -66,12 +80,17 @@ if quest_4 == 'c' or 'C':
     count += 5
 else:
     print("adooo!")
+ 
+ 
+#-------------------------------------------------------------------------------------------------------   
+input("Press enter for next question")   
     
+#-------------------------------------------------------------------------------------------------------
 quest_5 = input("""\n \n What is the capital city of Singapore?
 
-                      a. Shalalea
+                      a. Tampines
                       b. Jakarta
-                      c. Ado
+                      c. Kuala Lumpur
                       d. Singapore """)
 if quest_5 == 'd' or 'D':
     print("Great!")
@@ -80,12 +99,17 @@ else:
     print("adooo!")
     
 
-quest_6 = input("""\n \n Where is Papua New Guinea?
-
-                      a. West Africa
-                      b. South America
-                      c. Oceania
-                      d. Asia """)
+quest_6 = input("""\n \n 
+Where is Papua New Guinea?
+       a. West Africa
+       b. South America
+       c. Oceania
+       d. Asia """)
+                      
+#-------------------------------------------------------------------------------------------------------   
+input("Press enter for next question")   
+    
+#-------------------------------------------------------------------------------------------------------
 if quest_6 == 'c' or 'C':
     print("Great!")
     count += 5
