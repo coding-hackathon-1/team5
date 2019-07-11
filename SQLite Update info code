@@ -1,0 +1,16 @@
+import sqlite3 as lite
+
+user_id = 3
+personal_xp = '35'
+
+con = lite.connect('CoHult.db')
+
+with con:
+
+    cur = con.cursor()
+
+    cur.execute("UPDATE user SET personal_xp=? WHERE user_id=?", (personal_xp, user_id))
+    
+    
+    
+    ## This code helps us update the values in the database in SQLITE. In this case I wanted to update the personal_xp of the user.
