@@ -1,0 +1,123 @@
+cohort = []
+
+##########################################################################
+
+def new_user(): 
+   
+    email = input("Please enter your @student.hult.edu email: ")
+
+
+    #---------------------------------------------------------------------------
+    
+    user_name = input("Enter your user name: ")
+    pass_word = ps.getpass("Password: ")
+    
+    #---------------------------------------------------------------------------
+
+    
+                
+    nation = input("What is your nationality? ")
+    
+    #---------------------------------------------------------------------------
+    
+    while True:
+        
+        lang_no = int(input("How many languages do you speak? (Max 5) "))
+    
+        if lang_no == 1:
+            lang_1 = input("What language do you speak? ")
+            lang_2 = ""
+            lang_3 = ""
+            lang_4 = ""
+            lang_5 = ""
+            break
+        
+        elif lang_no == 2:
+            lang_1 = input("What language do you speak? ")
+            lang_2 = input("What is the second language you speak? ")
+            lang_3 = ""
+            lang_4 = ""
+            lang_5 = ""
+            break
+        
+        elif lang_no == 3:
+            lang_1 = input("What language do you speak? ")
+            lang_2 = input("What is the second language you speak? ")
+            lang_3 = input("What is the third language you speak? ")
+            lang_4 = ""
+            lang_5 = ""
+            break
+        
+        elif lang_no == 4:
+            lang_1 = input("What language do you speak? ")
+            lang_2 = input("What is the second language you speak? ")
+            lang_3 = input("What is the third language you speak? ")
+            lang_4 = input("What is the fourth language you speak? ")
+            lang_5 = ""
+            break
+        
+        else:
+            lang_1 = input("What language do you speak? ")
+            lang_2 = input("What is the second language you speak? ")
+            lang_3 = input("What is the third language you speak? ")
+            lang_4 = input("What is the fourth language you speak? ")
+            lang_5 = input("What is the fifth language you speak? ")
+            break
+            
+    #---------------------------------------------------------------------------
+    
+    
+
+    
+
+    print("Account Created")
+    
+    types = ("Blue", "Green","Red", "Yellow")
+    cohort = random.sample(types,1)
+    co = ''.join(cohort)
+    print(f"You are in {co} Team!")
+    
+    
+    
+    
+    app_list.append({"user_name" : user_name,
+                     "password" : pass_word,
+                     "email" : email,
+                     "nation" : nation,
+                     "lang_no" : lang_no,
+                     "lang_1" : lang_1,
+                     "lang_2" : lang_2,
+                     "lang_3" : lang_3,
+                     "lang_4" : lang_4,
+                     "lang_5" : lang_5,
+                     "cohort" : cohort})
+                     
+                     
+                     
+##########################################################################
+
+#defining if user is new or old
+#def login():
+while True:
+    user = input("""  
+    If you are an existing user, input 'Log In'
+
+    If you are a new user, input 'Register'  
+
+    """)
+
+    if user.lower() == "register" :
+        new_user()
+        user_data = df.append(app_list, ignore_index = True)
+        user_data = user_data.reindex(columns = ['user_name', 'password', 'email', 'nation', 'lang_no', 'lang_1', "lang_2", "lang_3", "lang_4", "lang_5", "cohort"])
+        user_data.to_excel('user_data.xlsx')
+        break
+
+
+    elif user.lower() == "log in":
+        old_user()
+        break
+
+
+    else:
+        print("Wrong input! Please enter 'Log In' or 'Register'")
