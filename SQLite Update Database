@@ -1,0 +1,14 @@
+import sqlite3 as lite
+
+user_id = 1
+nation = 'Papua New Guinea'
+
+con = lite.connect('CoHult.db')
+
+with con:
+
+    cur = con.cursor()
+
+    cur.execute("UPDATE user SET nation=? WHERE user_id=?", (nation, user_id))
+
+   
