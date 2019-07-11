@@ -1,102 +1,149 @@
-#Trivia Questions
+#Trivia Questions (!!!!!!!)
 
-count = 0
 cohort = input("""
 Hello! We are so excited that you are in Hult!
 We are very proud of our student body and how diverse it is!
 We want you to expand your knowledge about the world.
 Here are some trivia questions for you in exchange of XP's for you and your cohort!
        
-What is your Cohort? >> """)
-if cohort.lower is 'blue' or 'green' or 'yellow' or 'red':
+What is your Cohort? Blue or Green or Yellow or Red? >> """)
+if cohort.lower == 'blue':
+    print(f"""\n Great, welcome member of the {cohort} team""")
+elif cohort.lower == 'green':
+    print(f"""\n Great, welcome member of the {cohort} team""")
+elif cohort.lower == 'yellow':
+    print(f"""\n Great, welcome member of the {cohort} team""")
+elif cohort.lower == 'red':
     print(f"""\n Great, welcome member of the {cohort} team""")
 else: 
-    print("This is not a cohort. Please write it again")      
-    
+    cohort = input("please input \"Blue\" or \"Green\" or \"Yellow\" or \"Red\"")
+  
+#-------------------------------------------------------------------------------------------------------
 quest_1 = input( """ \n
-    Which of this is not a continent? 
-              a. North America
-              b. Southern Africa
-              c. Oceania
-              d. Asia \n \n 
-              Answer >>  """)
-    
-                     
-if quest_1 == 'b' or 'B':
+*Question 1*
+Which of this is not a continent? 
+       a. North America
+       b. Southern Africa
+       c. Oceania
+       d. Asia \n \n 
+       Answer >>  """)
+
+#make input lower case
+quest_1 = quest_1.lower()                    
+if quest_1 == 'b':
     print("\n Amazing!")
-    count += 5
+    personal_xp += 5
 else:
-    print("\n adooo!!!")
-    
+    print("\n It is b! Southern Africa is a country not a continent.\n")
+#-------------------------------------------------------------------------------------------------------
+input("\nPress enter for next question")
 
-quest_2 = input( """ \n Is Antartica a country?
-      Hmm, I remember I saw a picture of their capital "Iglü"
-              a. no
-              b. yes
-              """)
+#-------------------------------------------------------------------------------------------------------
+quest_2 = input( """ \n 
+*Question 2*
+Is Antartica a country?
+Hmm, I remember I saw a picture of their capital "Iglü"
+       a. yes
+       b. no
+       
+       Answer >> """)
 
-if quest_2 == 'a' or 'A':
+#make input lower case
+quest_2 = quest_2.lower()
+if quest_2 == 'b':
     print("Great!")
-    count += 5
+    personal_xp += 5
 else:
-    print("adooo!")
+    print("Where did you see that? Antartica is a continent, not a country!")
     
-print(f"""\n Jakarta is obviously in Asia, just as Juba, right?""")
+#-------------------------------------------------------------------------------------------------------   
+input("\nPress enter for next question")   
+    
+#-------------------------------------------------------------------------------------------------------
 quest_3 = input( """ \n
-      Is Juba in Asia?
-              a. duh
-              b. wtf, no
-              """)
-if quest_3 == 'b' or "B":
+*Question 3*
+Jakarta is obviously in Asia, just as Juba, right?
+Is Juba in Asia?
+       a. duh
+       b. wtf, no 
+       
+       Answer >> """)
+
+#make input lower case
+quest_3 = quest_3.lower()            
+if quest_3 == 'b':
     print("\n Great!")
-    count += 5
-    print(f"Current Score is {count}!!")
+    personal_xp += 5
 else:
-    print("\n adooo!") 
-    
-quest_4 = input( """ \n Which is the only country to play in every World Cup?
-                              a. Germany
-                              b. Current Champs, France
-                              c. Brasil
-                              d. Netherlands
-                 """)
+    print("\n It is not! Juba is the capital of South Sudan, Africa!") 
 
-if quest_4 == 'c' or 'C':
+
+#-------------------------------------------------------------------------------------------------------   
+input("\nPress enter for next question")   
+    
+#-------------------------------------------------------------------------------------------------------
+quest_4 = input( """ \n 
+*Question 4*
+Which is the only country to play in every World Cup?
+         a. Germany
+         b. Current Champs, France
+         c. Brasil
+         d. Netherlands
+                
+        Answer >> """)
+
+#make input lower case
+quest_4 = quest_4.lower()
+if quest_4 == 'c':
     print("Great!")
-    count += 5
+    personal_xp += 5
 else:
-    print("adooo!")
+    print("Netherlands never misses a World Cup!")
+ 
+ 
+#-------------------------------------------------------------------------------------------------------   
+input("\nPress enter for next question")   
     
-quest_5 = input("""\n \n What is the capital city of Singapore?
-
-                      a. Shalalea
-                      b. Jakarta
-                      c. Ado
-                      d. Singapore """)
-if quest_5 == 'd' or 'D':
-    print("Great!")
-    count += 5
-else:
-    print("adooo!")
-    
-
-quest_6 = input("""\n \n Where is Papua New Guinea?
-
-                      a. West Africa
-                      b. South America
-                      c. Oceania
-                      d. Asia """)
-if quest_6 == 'c' or 'C':
-    print("Great!")
-    count += 5
-else:
-    print("adooo!")  
-    
-print(f"Current Score is {count}!!")
-    
-    
-    
-             
-
+#-------------------------------------------------------------------------------------------------------
+quest_5 = input("""\n 
+*Question 5*
+What is the capital city of Singapore?
+        a. Tampines
+        b. Jakarta
+        c. Kuala Lumpur
+        d. Singapore 
         
-      
+        Answer >> """)
+
+#make input lower case
+quest_5 = quest_5.lower()
+if quest_5 == 'd':
+    print("Great!")
+    personal_xp += 5
+else:
+    print("Singapore is the capital city of Singapore!")
+    
+#-------------------------------------------------------------------------------------------------------   
+input("\nPress enter for next question")   
+    
+#-------------------------------------------------------------------------------------------------------
+quest_6 = input("""\n \n 
+*Question 6*
+Where is Papua New Guinea?
+       a. West Africa
+       b. South America
+       c. Oceania
+       d. Asia 
+       
+       Answer >> """)
+                      
+#make input lower case
+quest_6 = quest_6.lower()
+if quest_6 == 'c':
+    print("Great!")
+    personal_xp += 5
+else:
+    print("Papua New Guinea is on top of Australia, beside Indonesia!")  
+    
+print(f"Current Score is {personal_xp}!!")
+   
