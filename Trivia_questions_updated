@@ -1,0 +1,102 @@
+#Trivia Questions
+
+count = 0
+cohort = input("""
+Hello! We are so excited that you are in Hult!
+We are very proud of our student body and how diverse it is!
+We want you to expand your knowledge about the world.
+Here are some trivia questions for you in exchange of XP's for you and your cohort!
+       
+What is your Cohort? >> """)
+if cohort.lower is 'blue' or 'green' or 'yellow' or 'red':
+    print(f"""\n Great, welcome member of the {cohort} team""")
+else: 
+    print("This is not a cohort. Please write it again")      
+    
+quest_1 = input( """ \n
+    Which of this is not a continent? 
+              a. North America
+              b. Southern Africa
+              c. Oceania
+              d. Asia \n \n 
+              Answer >>  """)
+    
+                     
+if quest_1 == 'b' or 'B':
+    print("\n Amazing!")
+    count += 5
+else:
+    print("\n adooo!!!")
+    
+
+quest_2 = input( """ \n Is Antartica a country?
+      Hmm, I remember I saw a picture of their capital "Iglü"
+              a. no
+              b. yes
+              """)
+
+if quest_2 == 'a' or 'A':
+    print("Great!")
+    count += 5
+else:
+    print("adooo!")
+    
+print(f"""\n Jakarta is obviously in Asia, just as Juba, right?""")
+quest_3 = input( """ \n
+      Is Juba in Asia?
+              a. duh
+              b. wtf, no
+              """)
+if quest_3 == 'b' or "B":
+    print("\n Great!")
+    count += 5
+    print(f"Current Score is {count}!!")
+else:
+    print("\n adooo!") 
+    
+quest_4 = input( """ \n Which is the only country to play in every World Cup?
+                              a. Germany
+                              b. Current Champs, France
+                              c. Brasil
+                              d. Netherlands
+                 """)
+
+if quest_4 == 'c' or 'C':
+    print("Great!")
+    count += 5
+else:
+    print("adooo!")
+    
+quest_5 = input("""\n \n What is the capital city of Singapore?
+
+                      a. Shalalea
+                      b. Jakarta
+                      c. Ado
+                      d. Singapore """)
+if quest_5 == 'd' or 'D':
+    print("Great!")
+    count += 5
+else:
+    print("adooo!")
+    
+
+quest_6 = input("""\n \n Where is Papua New Guinea?
+
+                      a. West Africa
+                      b. South America
+                      c. Oceania
+                      d. Asia """)
+if quest_6 == 'c' or 'C':
+    print("Great!")
+    count += 5
+else:
+    print("adooo!")  
+    
+print(f"Current Score is {count}!!")
+    
+    
+    
+             
+
+        
+      
